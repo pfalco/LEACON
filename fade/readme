@@ -1,1 +1,11 @@
+Implementation of the FADE and U-FADE descriptors, as described in the work:
+
+@article{falco2018representing,
+  title={Representing human motion with FADE and U-FADE: an efficient frequency-domain approach},
+  author={Falco, Pietro and Saveriano, Matteo and Shah, Dharmil and Lee, Dongheui},
+  journal={Autonomous Robots},
+  pages={},
+  year={2018},
+  publisher={Springer}
+}
 
