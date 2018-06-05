@@ -1,6 +1,6 @@
 function [ output_args ] = ufade(data, f_th, K,f_s)
 % It computes the UFADE descriptor. 
-% data is the matrix describing the action
+% data is the matrix describing the action, discrete-time indexes as row indexes, joint variable indexes as column indexes
 % f_th is the chosen frequency threshold
 % K is the number of points and influences the frequency resolution
 % f_s is the sampling frequency
@@ -17,12 +17,6 @@ function [ output_args ] = ufade(data, f_th, K,f_s)
         i_f = 3;
     end
     vf = abs(fft(v1,N));
-%     f = f_s*(0:(N/2))/N;
-%     Df_new=f_th/K; %Desired frequency resolution
-%     f=f(1:i_f);
-%     v2=vf(1:i_f,:);  
-%     v2abs = resampleNew(v2, f, 1/Df_new);
-
     f = f_s/2*linspace(0,1,N/2+1);
     f=f(1:i_f);
     v2=vf(1:i_f,:);  
