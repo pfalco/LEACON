@@ -1,6 +1,6 @@
 function [ output_args ] = fade(data, f_th, K,f_s)
 % It computes the FADE descriptor. 
-% data is the matrix describing the action
+% data is the matrix describing the action. Configuration variables are identified by column numbers, dicrete-time instants by row numbers 
 % f_th is the chosen frequency threshold
 % K is the number of points and influences the frequency resolution
 % f_s is the sampling frequency
@@ -19,13 +19,9 @@ function [ output_args ] = fade(data, f_th, K,f_s)
     end
     
     vf = abs(fft(v1,N));
-%     f = f_s*(0:(N/2))/N;
     f = f_s/2*linspace(0,1,N/2+1);
-    %Df=f_s/N; %Initial Frequency resolution 
-   % Df_new=f_th/K; %Desired frequency resolution
     f=f(1:i_f);
     v2=vf(1:i_f,:);  
-    %v2abs = resampleNew(v2, f, 1/Df_new);
     v2abs = interp1(f, v2, linspace(0,f(end),K));
     [coeff,~,~,~,explained,~] = pca(v2abs); 
     coeffexpprod =  bsxfun(@times, coeff, explained');
