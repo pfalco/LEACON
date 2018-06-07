@@ -1,0 +1,16 @@
+Point clouds of the data used for crossmodal object recognition, saved as csv files.
+In each file in contained a visual or tactile point cloud. Given a point cloud composed by n points, the structure of each csv file is:
+X1, X2, ..., Xn 
+Y1, Y2, ...,Yn
+Z1, Z2, ..., Zn
+
+Please refer to the paper:
+@INPROCEEDINGS{falco_lu17, 
+author={P. Falco and S. Lu and A. Cirillo and C. Natale and S. Pirozzi and D. Lee}, 
+booktitle={2017 IEEE International Conference on Robotics and Automation (ICRA)}, 
+title={Cross-modal visuo-tactile object recognition using robotic active exploration}, 
+year={2017}, 
+volume={}, 
+number={}, 
+pages={5273-5280}, 
+}
